@@ -109,7 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
     createLogos();
 });
 
-const slides = document.querySelectorAll('.slide');
+
+
+function slidesPlugin(activeSlide = 0) {
+
+    const slides = document.querySelectorAll('.slide');
+
+    slides[activeSlide].classList.add('active');
 
 slides.forEach((slide) => {
     slide.addEventListener('click', () => {
@@ -123,3 +129,7 @@ function clearActiveClasses() {
         slide.classList.remove('active');
     })
 }
+
+}
+
+slidesPlugin(2);
